@@ -32,10 +32,9 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <div className="p-8 prose prose-slate">
+    <div className="min-w-full min-h-screen px-4 pt-8 pros bg-gradient-to-r from-amber-500 to-yellow-500 md:px-8 prose-slate">
       <Router>
         <Header breweries={breweries} />
-        <SearchBar value={filter} set={setFilter} />
         <main>
           <Notification notification={notification} />
           <Switch>
@@ -43,6 +42,7 @@ const App: React.FC = () => {
               <BreweryDetail breweries={breweries} />
             </Route>
             <Route path="/">
+              <SearchBar value={filter} set={setFilter} />
               <BreweryList breweries={breweries.filter(filterBreweries(filter))} />
             </Route>
           </Switch>

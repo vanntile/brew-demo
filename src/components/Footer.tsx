@@ -1,9 +1,9 @@
 import React from 'react'
 
 const Footer: React.FC = () => (
-  <footer>
+  <footer className="px-4 py-12 -mx-4 text-gray-800 bg-white md:px-8 md:-mx-8">
     <div>
-      Icons made by{' '}
+      Favicons made by{' '}
       <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">
         Good Ware
       </a>{' '}
