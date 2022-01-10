@@ -6,9 +6,9 @@ interface Props {
 
 const Notification: React.FC<Props> = ({ notification }) =>
   notification ? (
-    <div className="w-full px-2 py-4 overflow-x-auto text-center whitespace-no-wrap rounded-md" role="alert">
+    <div className="w-full px-2 py-8 overflow-x-auto text-center whitespace-no-wrap rounded-m" role="alert">
       <div
-        className={`relative inline-flex w-full max-w-sm ml-3 overflow-hidden rounded shadow-sm hover:shadow-lg ${
+        className={`relative inline-flex w-full max-w-sm ml-3 overflow-hidden rounded shadow-sm hover:shadow-lg ring-2 ring-gray-100 ${
           notification.type === 'error' ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'
         }`}
       >

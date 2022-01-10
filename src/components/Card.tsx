@@ -21,7 +21,7 @@ const Card: React.FC<Props> = ({ brewery }) => (
         <div>City: {brewery.city}</div>
       </div>
       <Link
-        className="px-6 py-4 mt-2 font-semibold text-gray-100 transition-colors rounded-full bg-amber-500 hover:bg-amber-600 hover:text-white"
+        className="px-6 py-4 mt-2 font-semibold tracking-wider text-gray-900 transition-colors rounded-full bg-amber-500 hover:bg-amber-400 hover:text-black"
         to={`/brewery/${brewery.id}`}
       >
         View details

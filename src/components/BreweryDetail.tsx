@@ -47,7 +47,7 @@ const BreweryDetail: React.FC<Props> = ({ breweries }) => {
                 )}
               </div>
               <button
-                className="px-6 py-4 mt-2 font-semibold text-gray-100 transition-colors rounded-full bg-amber-500 hover:bg-amber-600 hover:text-white"
+                className="px-6 py-4 mt-2 font-semibold text-gray-900 transition-colors rounded-full bg-amber-500 hover:bg-amber-400 hover:text-black"
                 onClick={() => {
                   history.push('/')
                 }}

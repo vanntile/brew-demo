@@ -42,7 +42,7 @@ const App: React.FC = () => {
               <BreweryDetail breweries={breweries} />
             </Route>
             <Route path="/">
-              <SearchBar value={filter} set={setFilter} />
+              {breweries.length !== 0 && <SearchBar value={filter} set={setFilter} />}
               <BreweryList breweries={breweries.filter(filterBreweries(filter))} />
             </Route>
           </Switch>
