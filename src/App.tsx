@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import BreweryList from './components/BrewerieList'
 import BreweryDetail from './components/BreweryDetail'
 import Footer from './components/Footer'
 import Notification from './components/Notification'
+import SearchBar from './components/SearchBar'
 import useNotification from './hooks/useNotification'
+import { filterBreweries } from './utils/helpers'
 
 const App: React.FC = () => {
+  const [filter, setFilter] = useState('')
   const [breweries, setBreweries] = useState<Brewery[]>([])
   const [notification, notify] = useNotification()
 
@@ -30,13 +33,7 @@ const App: React.FC = () => {
   return (
     <div className="p-8 prose prose-slate">
       <Router>
-        <header>
-          <h1>
-            <Link to="/">A Tale of Brew Cities</Link>
-          </h1>
-          <p>We know of {breweries.length} breweries</p>
-        </header>
-        <nav></nav>
+        <SearchBar value={filter} set={setFilter} />
         <main>
           <Notification notification={notification} />
           <Switch>
@@ -44,7 +41,7 @@ const App: React.FC = () => {
               <BreweryDetail breweries={breweries} />
             </Route>
             <Route path="/">
-              <BreweryList breweries={breweries} />
+              <BreweryList breweries={breweries.filter(filterBreweries(filter))} />
             </Route>
           </Switch>
         </main>

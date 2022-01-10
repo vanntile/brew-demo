@@ -8,6 +8,8 @@ interface Props {
 const Card: React.FC<Props> = ({ brewery }) => (
   <>
     <div>{brewery.name}</div>
+    <div>{brewery.brewery_type}</div>
+    <div>{brewery.city}</div>
     <Link to={`/brewery/${brewery.id}`}>View details</Link>
   </>
 )
