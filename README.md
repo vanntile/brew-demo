@@ -6,7 +6,7 @@ Welcome to a Brewery API React demo. Check out your perferred pint or get outta 
 
 ## How to run
 
-In order to run this project, make sure to use Node 16.x and npm 8.x
+In order to run this project, make sure to use Node 16.x and npm 8.x (or remove the `engines` key from `package.json`).
 
 For a development view, use:
 
