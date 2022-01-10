@@ -17,3 +17,8 @@ interface Brewery {
   updated_at: string
   created_at: string
 }
+
+interface INotification {
+  type: 'error' | 'success'
+  message: string
+}
