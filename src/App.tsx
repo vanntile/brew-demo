@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import BreweryList from './components/BrewerieList'
 import BreweryDetail from './components/BreweryDetail'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import Notification from './components/Notification'
 import SearchBar from './components/SearchBar'
 import useNotification from './hooks/useNotification'
@@ -33,6 +34,7 @@ const App: React.FC = () => {
   return (
     <div className="p-8 prose prose-slate">
       <Router>
+        <Header breweries={breweries} />
         <SearchBar value={filter} set={setFilter} />
         <main>
           <Notification notification={notification} />
